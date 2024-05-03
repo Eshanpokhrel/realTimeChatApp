@@ -1,12 +1,16 @@
 import './App.css'
-import Signup from './components/Signup'
+// import Home from './components/pages/home'
+import Login from './components/pages/login'
+// import Signup from './components/pages/signup'
 
 function App() {
 
   return (
-    <>
-      <Signup/>
-    </>
+    <div className='w-full h-screen bg-lime-500 flex-center'>
+      <Login/>
+      {/* <Signup/>
+      <Home/> */}
+    </div>
   )
 }
 
