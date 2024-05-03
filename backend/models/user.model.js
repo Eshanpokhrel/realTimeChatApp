@@ -24,11 +24,11 @@ const userSchema = new mongoose.Schema({
         required:true,
         enum:['male','female','other'],
     },
-    profilePicture:{
+    avatar:{
         type:String,
         default: "",
     },
-})
+},{timestamps:true})
 
 const User = mongoose.model("User", userSchema);
 
