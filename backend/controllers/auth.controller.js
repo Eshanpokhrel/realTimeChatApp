@@ -4,7 +4,7 @@ import generateToken from "../utils/generateToken.js"
 
 export const signup = async (req, res) => {
     try {
-        const { firstName, lastName, username, gender, password, confirmPassword } = req.body
+        const { fullName, username, gender, password, confirmPassword } = req.body
 
         if(password !== confirmPassword){
             return res.status(400).json({
@@ -29,8 +29,7 @@ export const signup = async (req, res) => {
         const female = `https://avatar.iran.liara.run/public/girl`
 
         const newUser = new User({
-            firstName,
-            lastName,
+            fullName,
             username,
             gender,
             password: hashedPassword,
@@ -45,8 +44,7 @@ export const signup = async (req, res) => {
 
             res.status(201).json({
                 _id: newUser._id,
-                firstName: newUser.firstName,
-                lastName: newUser.lastName,
+                fullName: newUser.fullName,
                 username: newUser.username,
                 avatar: newUser.avatar,
                 message: "user created successfully"
@@ -81,7 +79,7 @@ export const login = async (req, res) => {
 
         res.status(200).json({
             _id: user._id,
-            firstName: user.firstName,
+            fullName: user.fullName,
             lastName: user.lastName,
             username: user.username,
             avatar: user.avatar,
