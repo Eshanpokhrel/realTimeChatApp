@@ -1,15 +1,11 @@
 import './App.css'
-// import Home from './components/pages/home'
-import Login from './components/pages/login'
-// import Signup from './components/pages/signup'
+import LoginAndSignup from './components/pages/LoginAndSignup'
 
 function App() {
 
   return (
-    <div className='w-full h-screen bg-lime-500 flex-center'>
-      <Login/>
-      {/* <Signup/>
-      <Home/> */}
+    <div className='w-full h-screen bg-[#154c79] flex-center'>
+      <LoginAndSignup/>
     </div>
   )
 }
