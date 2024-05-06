@@ -6,7 +6,7 @@ const Sidebar = () => {
   return (
     <div className="w-full h-full lg:w-1/3 lg:border-r-2 border-slate-500">
       <Search/>
-      <div className="h-[70%] overflow-scroll">
+      <div className="h-[70%] overflow-auto">
         <ProfileCard />
         <ProfileCard />
         <ProfileCard />
