@@ -1,5 +1,5 @@
 import Sidebar from "../sidebar/Sidebar";
-import MessageWindow from "./MessageWindow";
+import MessageWindow from "../messages/MessageWindow";
 
 const Home = () => {
   return (
