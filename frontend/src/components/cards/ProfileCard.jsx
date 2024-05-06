@@ -1,20 +1,23 @@
+import { faDotCircle } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const ProfileCard = () => {
   return (
     <div className="border border-blue-300 shadow rounded-md p-2 w-[95%] mt-3 mx-auto">
-      <div className="animate-pulse flex space-x-4">
-        <div className="rounded-full bg-slate-700 h-10 w-10"></div>
-        <div className="flex-1 space-y-6 py-1">
-          <div className="h-2 bg-slate-700 rounded"></div>
-          <div className="space-y-3">
-            <div className="grid grid-cols-3 gap-4">
-              <div className="h-2 bg-slate-700 rounded col-span-2"></div>
-              <div className="h-2 bg-slate-700 rounded col-span-1"></div>
-            </div>
-            <div className="h-2 bg-slate-700 rounded"></div>
-          </div>
+      <div className="flex space-x-4">
+        <div className="flex">
+          <img
+            src="https://avatar.iran.liara.run/public/girl?username=jane"
+            alt="avatar"
+            className="rounded-full bg-slate-700 h-10 w-10"
+          />
+          <FontAwesomeIcon icon={faDotCircle} color="green" className="mt-6 ml-[-15px]"/>
         </div>
+        <span className="font-black text-xl">Jane Doe</span>
       </div>
+        <div className="flex-1 py-0.5 ml-14">
+          <span className="">Message......</span>
+        </div>
     </div>
   );
 }
