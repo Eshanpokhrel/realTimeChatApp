@@ -8,7 +8,7 @@ import {
 
 const MessageWindow = () => {
   return (
-    <div className="messageWindow w-2/3 h-full p-3 flex flex-col">
+    <div className="hidden w-full h-full p-3 lg:w-2/3 lg:h-full lg:flex lg:flex-col">
         <div className="h-[15%] w-full p-3 flex justify-between border-2 border-slate-500">
           <div className="flex items-center gap-4">
             <img
@@ -19,9 +19,9 @@ const MessageWindow = () => {
             <span className="font-black text-xl">John Doe</span>
           </div>
           <div className="flex-center gap-6">
-            <FontAwesomeIcon icon={faPhone} />
-            <FontAwesomeIcon icon={faVideo} />
-            <FontAwesomeIcon icon={faListDots} />
+            <FontAwesomeIcon icon={faPhone} className="hover:text-white"/>
+            <FontAwesomeIcon icon={faVideo} className="hover:text-white"/>
+            <FontAwesomeIcon icon={faListDots} className="hover:text-white"/>
           </div>
         </div>
         <div className="messageBox h-[75%]">

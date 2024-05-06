@@ -4,8 +4,8 @@ import { faArrowRightToBracket,faSearch } from "@fortawesome/free-solid-svg-icon
 
 const Sidebar = () => {
   return (
-    <div className="w-1/3 h-full border-r-2 border-slate-500">
-        <div className="h-[15%] flex-center gap-3 bg-white/15 rounded-tl-2xl">
+    <div className="w-full h-full lg:w-1/3 lg:border-r-2 border-slate-500">
+        <div className="h-[15%] flex-center gap-3 bg-white/15 lg:rounded-tl-2xl">
           <input
             type="text"
             placeholder="Search"
@@ -23,7 +23,7 @@ const Sidebar = () => {
           <ProfileCard />
           <ProfileCard />
         </div>
-        <div className="h-[15%] bg-white/15 flex gap-4 p-4 rounded-bl-2xl ">
+        <div className="h-[15%] bg-white/15 flex gap-4 p-4 lg:rounded-bl-2xl ">
           <img
             className="w-[50px] h-[50px] rounded-full"
             src="https://avatar.iran.liara.run/public/boy?username=eshan"

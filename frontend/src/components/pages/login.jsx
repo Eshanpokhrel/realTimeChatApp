@@ -3,8 +3,8 @@
 const Login = () => {
   return (
     <>
-    <div className="w-full h-full bg-yellow-200 rounded-full flex-center flex-col p-8 md:w-1/2">
-        <div className="h-auto w-auto p-5 bg-[#444] flex-center flex-col rounded-[30px] gap-1 md:gap-3">
+    <div className="w-full h-full bg-yellow-200 rounded-full flex-center flex-col p-8 lg:w-1/2">
+        <div className="h-auto w-auto p-5 bg-[#444] flex-center flex-col rounded-[30px] gap-1 lg:gap-3">
 
           <label className="text-sm">Username</label>
           <input type="text" placeholder="eshanpokhrel" className="rounded-xl placeholder-[#555] w-[90%] p-2 outline-none"/>
