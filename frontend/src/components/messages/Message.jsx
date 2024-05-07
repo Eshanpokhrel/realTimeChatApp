@@ -3,7 +3,7 @@ const Message = () => {
     <>
       <div className="chat chat-start">
         <div className="chat-image">
-            <img src="https://avatar.iran.liara.run/public/boy?username=john" alt="avatar" className="h-7 w-7"/>  
+            <img src="https://api.multiavatar.com/johndoe.png" alt="avatar" className="h-7 w-7"/>  
         </div>
         <div className="chat-bubble">
           ksbfkjcwe dsjfbcij ijebfvc ruuibfc <br />jjdbsfbkjdpsguvc
@@ -13,7 +13,7 @@ const Message = () => {
       <div className="chat chat-end">
         <div className="chat-bubble">[oughfjbvc erifeqbgouiv jduiqfebv iug] <br />woefhincwe</div>
         <div className="chat-image">
-            <img src="https://avatar.iran.liara.run/public/boy?username=eshan" alt="avatar" className="h-7 w-7"/>
+            <img src="https://api.multiavatar.com/eshan.png" alt="avatar" className="h-7 w-7"/>
         </div>
         <time className="text-xs opacity-50">Seen at 12:46</time>
       </div>

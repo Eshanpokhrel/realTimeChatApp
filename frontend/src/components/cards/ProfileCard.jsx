@@ -7,7 +7,7 @@ const ProfileCard = () => {
       <div className="flex space-x-4">
         <div className="flex">
           <img
-            src="https://avatar.iran.liara.run/public/girl?username=jane"
+            src="https://api.multiavatar.com/janedoe.png"
             alt="avatar"
             className="rounded-full bg-slate-700 h-10 w-10"
           />

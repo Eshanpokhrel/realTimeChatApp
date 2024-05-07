@@ -4,7 +4,7 @@ import InputModel from "./InputModel";
 
 const MessageWindow = () => {
 
-  const chatSelection = true
+  const chatSelection = false
 
   return (
     <div className="hidden w-full h-full p-3 lg:w-2/3 lg:h-full lg:flex lg:flex-col">
@@ -31,7 +31,7 @@ const ChatNotSelected = () => {
       </span>
       <span className="text-center text-teal-500">
       🙋‍♂️🤝<br/>Welcome!<br />
-        Select a conversation to start chatting.
+        Select a conversation and start chatting.
       </span>      
     </div>
   )

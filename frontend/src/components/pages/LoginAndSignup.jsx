@@ -22,7 +22,7 @@ const LoginAndSignup = () => {
           Login to your personalized chat space and connect with family and friends.
           Stay connected, chat anytime, anywhere.
         </span>
-        <a href="#" className="text-base mt-1 text-gray-500 font-semibold hover:text-blue-700 lg:mt-5" onClick={handleClick}>{option}</a>
+        <div className="text-base mt-1 text-gray-500 font-semibold cursor-pointer hover:text-blue-700 lg:mt-5" onClick={handleClick}>{option}</div>
       </div>
       {option === "Already have an account?" && <Signup/>}
     </div>

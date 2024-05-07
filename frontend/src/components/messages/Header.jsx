@@ -11,7 +11,7 @@ const Header = () => {
           <div className="flex items-center gap-4">
             <img
               className="w-[50px] h-[50px] rounded-full"
-              src="https://avatar.iran.liara.run/public/boy?username=john"
+              src="https://api.multiavatar.com/johndoe.png"
               alt="a"
             />
             <span className="font-black text-xl">John Doe</span>
