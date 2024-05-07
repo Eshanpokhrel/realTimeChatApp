@@ -8,7 +8,7 @@ export const signup = async (req, res) => {
 
         if(password !== confirmPassword){
             return res.status(400).json({
-                message: "passwords do not match"
+                error: "passwords do not match"
             })
         }
 
@@ -16,7 +16,7 @@ export const signup = async (req, res) => {
 
         if(user){
             return res.status(400).json({
-                message: "username already exists"
+                error: "username already exists"
             })
         }
 
@@ -54,7 +54,7 @@ export const signup = async (req, res) => {
         }
         else{
             res.status(400).json({
-                message: "Error creating user"
+                error: "Error creating user"
             })
         }
 
@@ -73,7 +73,7 @@ export const login = async (req, res) => {
 
         if(!isCorrectPassword || !user){
             return res.status(400).json({
-                message: "username or password is incorrect"
+                error: "username or password is incorrect"
             })
         }
 
