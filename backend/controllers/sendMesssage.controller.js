@@ -1,5 +1,6 @@
 import Convo from "../models/convo.model.js"
 import Message from "../models/message.model.js"
+import { getReceiverSocketID, io } from "../socket/socket.js"
 
 export const sendMesssage = async (req, res) => {
     // console.log("message sent", req.params.id)
@@ -28,13 +29,18 @@ export const sendMesssage = async (req, res) => {
             conversation.messages.push(newMessage._id)
         }
 
-        //Sockei io
-
         // await conversation.save()
         // await newMessage.save()
 
         //runs parallely and takes less time
         await Promise.all([conversation.save(), newMessage.save()])
+
+        //Sockei io
+        const receiverSocketID = getReceiverSocketID(receiverId)
+        if(receiverSocketID){
+            //io.to().emit() is used to send events to a particular client
+            io.to(receiverSocketID).emit("newMessage", newMessage)
+        }
 
         res.status(201).json(newMessage)
 

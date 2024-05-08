@@ -5,8 +5,8 @@ import authRoute from "./routes/auth.routes.js"
 import messageRoutes from "./routes/message.routes.js"
 import userRoutes from "./routes/user.routes.js"
 import mongoDB from './db/mongoDB.js'
+import { app, httpServer } from './socket/socket.js'
 
-const app = express()
 const PORT = process.env.PORT || 5000
 
 dotenv.config()
@@ -24,7 +24,7 @@ app.use("/api/users", userRoutes)
 // })
 
 
-app.listen(PORT, () => {
+httpServer.listen(PORT, () => {
     mongoDB()
     console.log(`server is running on port ${PORT}`)
 })

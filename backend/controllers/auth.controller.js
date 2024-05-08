@@ -25,17 +25,17 @@ export const signup = async (req, res) => {
         const hashedPassword = await bcrypt.hash(password, salt)
 
         // profile avatar
-        // const male = `https://avatar.iran.liara.run/public/boy?username=${username}`
-        // const female = `https://avatar.iran.liara.run/public/girl?username=${username}`
-        const randomAvatar = `https://api.multiavatar.com/${username}.png`
+        const male = `https://avatar.iran.liara.run/public/boy?username=${username}`
+        const female = `https://avatar.iran.liara.run/public/girl?username=${username}`
+        // const randomAvatar = `https://api.multiavatar.com/${username}.png`
 
         const newUser = new User({
             fullName,
             username,
             gender,
             password: hashedPassword,
-            // avatar: gender === 'male' ? male : female
-            avatar: randomAvatar
+            avatar: gender === 'male' ? male : female
+            // avatar: randomAvatar
         })
         
         if(newUser){

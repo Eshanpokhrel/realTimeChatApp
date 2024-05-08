@@ -1,21 +1,27 @@
-const Message = () => {
+import { useAuthContext } from "../../context/AuthContext";
+import { formatDate } from "../../timeFormatter/format";
+import useConversation from "../../zustand/useConversation";
+
+const Message = ({message}) => {
+
+  const {authUser} = useAuthContext()
+  const {selectedConversation} = useConversation()
+  const sender = message.senderId === authUser._id
+  const chatBubbleStyle = sender ? "chat-end" : "chat-start"
+  const avatar = sender ? authUser.avatar : selectedConversation?.avatar
+  const bubbleBg = sender ? "bg-emerald-600" : "bg-teal-600"
+  const time = formatDate(message.updatedAt)
+
   return (
     <>
-      <div className="chat chat-start">
+      <div className={`chat ${chatBubbleStyle}`}>
         <div className="chat-image">
-            <img src="https://api.multiavatar.com/johndoe.png" alt="avatar" className="h-7 w-7"/>  
+            <img src={avatar} alt="user-avatar" className="h-7 w-7"/>  
         </div>
-        <div className="chat-bubble">
-          ksbfkjcwe dsjfbcij ijebfvc ruuibfc <br />jjdbsfbkjdpsguvc
+        <div className={`chat-bubble ${bubbleBg} text-white`}>
+          {message.message}
         </div>
-        <time className="text-xs opacity-50">Sent at 12:45</time>
-      </div>
-      <div className="chat chat-end">
-        <div className="chat-bubble">[oughfjbvc erifeqbgouiv jduiqfebv iug] <br />woefhincwe</div>
-        <div className="chat-image">
-            <img src="https://api.multiavatar.com/eshan.png" alt="avatar" className="h-7 w-7"/>
-        </div>
-        <time className="text-xs opacity-50">Seen at 12:46</time>
+        <time className="text-xs opacity-50">{time}</time>
       </div>
     </>
   );

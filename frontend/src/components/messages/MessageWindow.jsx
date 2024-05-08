@@ -1,14 +1,15 @@
 import Header from "./Header";
 import ConvoBox from "./ConvoBox";
 import InputModel from "./InputModel";
+import useConversation from "../../zustand/useConversation";
 
 const MessageWindow = () => {
 
-  const chatSelection = false
+  const {selectedConversation} = useConversation()
 
   return (
-    <div className="hidden w-full h-full p-3 lg:w-2/3 lg:h-full lg:flex lg:flex-col">
-      {!chatSelection ? <ChatNotSelected/> : (
+    <div className={`w-full h-full p-3 lg:w-2/3 lg:h-full lg:flex lg:flex-col ${selectedConversation ? "flex flex-col" : "hidden"}`}>
+      {!selectedConversation ? <ChatNotSelected/> : (
         <>
         <Header/>
         <ConvoBox/>

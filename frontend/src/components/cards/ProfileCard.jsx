@@ -1,22 +1,36 @@
-import { faDotCircle } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import useConversation from "../../zustand/useConversation";
+import { useSocketContext } from "../../context/SocketContext";
 
-const ProfileCard = () => {
+const ProfileCard = ({conversation}) => {
+
+  const {selectedConversation, setSelectedConversation } = useConversation()
+
+  const isSelected = selectedConversation?._id === conversation._id
+  const { onlineUsers } = useSocketContext()
+  const isOnline  = onlineUsers.includes(conversation._id)
+  
+  // console.log(isOnline)
+  // console.log(conversation._id)
+
   return (
-    <div className="border border-blue-300 shadow rounded-md p-2 w-[95%] mt-[10.5px] mx-auto">
+    <div 
+      className={`border border-blue-300 shadow rounded-md p-2 w-[95%] 
+      mt-[10.5px] mx-auto hover:bg-white/50 hover:text-gray-600 
+      ${isSelected ? "bg-white/50 text-gray-600" : ""}`}
+      onClick={() => setSelectedConversation(conversation)}
+    >
       <div className="flex space-x-4">
-        <div className="flex">
+        <div className={`avatar ${isOnline ? "online" : ""} flex h-10 w-10`}>
           <img
-            src="https://api.multiavatar.com/janedoe.png"
+            src={conversation.avatar}
             alt="avatar"
-            className="rounded-full bg-slate-700 h-10 w-10"
+            className="rounded-full bg-slate-700"
           />
-          <FontAwesomeIcon icon={faDotCircle} color="green" className="mt-6 ml-[-15px]"/>
         </div>
-        <span className="font-black text-xl">Jane Doe</span>
+        <span className="font-black text-xl">{conversation.fullName}</span>
       </div>
         <div className="flex-1 mt-[-15px] ml-14">
-          <span className="text-sm">Message......</span>
+          <span className="text-sm">messages</span>
         </div>
     </div>
   );
