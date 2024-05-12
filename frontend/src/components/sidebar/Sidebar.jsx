@@ -1,4 +1,5 @@
 import useGetConversations from "../../hooks/useGetConversation";
+import useGetMessages from "../../hooks/useGetMessages";
 import useConversation from "../../zustand/useConversation";
 import ProfileCard from "../cards/ProfileCard";
 import Logout from "./Logout";
@@ -8,6 +9,11 @@ const Sidebar = () => {
 
   const { loading, conversations } = useGetConversations()
   const {selectedConversation} = useConversation()
+
+  const { messages } = useGetMessages();
+
+  const lastMessage = messages[messages.length - 1];
+  console.log(lastMessage)
 
   return (
     <div className={`w-full h-full lg:w-1/3 lg:border-r-2 border-slate-500 ${selectedConversation ? "hidden lg:block" : ""}`}>

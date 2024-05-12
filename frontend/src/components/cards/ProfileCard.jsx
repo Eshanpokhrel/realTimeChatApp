@@ -30,8 +30,9 @@ const ProfileCard = ({conversation}) => {
         <span className="font-black text-xl">{conversation.fullName}</span>
       </div>
         <div className="flex-1 mt-[-15px] ml-14">
-          <span className="text-sm">messages</span>
+          <span className="text-sm">message</span>
         </div>
+        <div className={`h-2 w-2 mt-[-7px] bg-white rounded-full float-end`}></div>
     </div>
   );
 }
